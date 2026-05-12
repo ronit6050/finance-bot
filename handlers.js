@@ -110,6 +110,11 @@ Examples:
     sendMessage("📈 Log an investment\n\nType: Amount Type\nExample:\n500 Mutual Fund\n200 Gold\n1000 Stocks");
   }
 
+  else if(action == "wishlist_purchased"){
+  PropertiesService.getScriptProperties().setProperty("savingsMode","wishlist_purchase");
+  markWishListPurchased();
+  }
+  
   else if(action == "wishlist_add"){
     PropertiesService.getScriptProperties().setProperty("savingsMode","wishlist");
     sendMessage(
@@ -337,6 +342,12 @@ Examples:
     addWishListItem(text);
     PropertiesService.getScriptProperties().deleteProperty("savingsMode");
     return;
+  }
+
+  if(savingsMode === "wishlist_purchase"){
+  processWishListPurchase(text);
+  PropertiesService.getScriptProperties().deleteProperty("savingsMode");
+  return;
   }
 
   /* ── Debt mode ── */

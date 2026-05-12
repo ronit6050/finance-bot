@@ -211,7 +211,8 @@ function sendSavingsMenu(messageId){
         [{text:"📈 Investments",        callback_data:"invest_dashboard"}],
         [{text:"💵 Log a Saving",       callback_data:"savings_add"},
          {text:"📊 Log Investment",     callback_data:"invest_add"}],
-        [{text:"🎯 Add to Wish List",   callback_data:"wishlist_add"}],
+        [{text:"🎯 Add to Wish List",    callback_data:"wishlist_add"}],
+        [{text:"✅ Mark as Purchased",   callback_data:"wishlist_purchased"}],
         [{text:"⬅ Back",               callback_data:"dashboard"}]
       ]
     }
